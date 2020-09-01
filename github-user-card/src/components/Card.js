@@ -6,10 +6,10 @@ function Card(props){
 
     return(
         <div>
-            <h1>Github Card</h1>
-            <div>
+            <h1>Github Profile</h1>
+            <div className="user-container">
               <img className="user-pic" src= {user.avatar_url} />
-              <div>
+              <div className="user-info">
                 <p>{user.name}</p>
                 <p>Location: {user.location}</p>
                 <p>{user.html_url}</p>
@@ -17,19 +17,23 @@ function Card(props){
               </div>
               
             </div>
-            <div>
-                <p>Followers: {user.followers}</p>
+            <div className="followers-container">
+
+                <h3>Followers: {user.followers}</h3>
+                <div className="followers">
                 {
                     followers.map((item)=>{
                         return (
-                            <div>
-                                <img src ={item.avatar_url}/>
+                            <div className="follower-card">
+                                <img src ={item.avatar_url} width="200px" height="200px"/>
                                 <p>{item.login}</p>
                                 
                                 </div>
                         )
                     })
                 }
+                </div>
+                
             </div>
         </div>
      )
