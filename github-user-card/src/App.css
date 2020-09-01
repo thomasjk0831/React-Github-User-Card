@@ -1,0 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 1px solid grey;
+}
+
+h1{
+  text-align: center;
+  padding: 15px;
+  background-color: lightgreen;
+}
+
