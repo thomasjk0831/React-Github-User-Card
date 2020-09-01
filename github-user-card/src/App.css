@@ -1,16 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 *{
   margin: 0;
   padding: 0;
-  border: 1px solid grey;
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
+  font-family: 'Roboto', sans-serif;
+
 }
 
 h1{
   text-align: center;
   padding: 15px;
-  background-color: #821692;
+  background-color: purple;
   color: white;
 }
+
+.main-container{
+  background: linear-gradient(to right, #70a4e0, #5160e6);
+
+}
+
+form{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input{
+  padding: 10px;
+  border-radius: 15px;
+  border: 5px solid purple;
+  outline: none;
+}
+
+form button{
+  padding: 5px;
+  margin-top: 3px;
+  border-radius: 5px;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+}
+
+
 
 .user-container{
   display: flex;
@@ -18,15 +51,17 @@ h1{
   align-items: center;
   width: 500px;
   margin: 0 auto;
-  background-color: #821692;
+  background-color: purple;
   margin-top: 10vh;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .user-info{
   width: 100%;
 }
 .user-info p{
-  background-color: #821692;
+  background-color: purple;
   text-align: center;
   font-size: 19px;
   color: white;
@@ -37,7 +72,7 @@ h1{
 }
 
 h3{
-  color: #821692;
+  color: purple;
   text-align: center;
 }
 
@@ -49,7 +84,7 @@ h3{
 }
 
 .follower-card p{
-  background-color: #821692;
+  background-color: purple;
   color: white;
   text-align: center;
 }

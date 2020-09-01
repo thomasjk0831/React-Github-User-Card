@@ -5,8 +5,16 @@ function Card(props){
     const {followers,user,userUrl} = props
 
     return(
-        <div>
+        <div className="main-container">
             <h1>Github Profile</h1>
+            <form>
+                <label>
+                    <input
+                      type="text"
+                      placeholder="Enter Github user"></input>
+                </label>
+                <button>submit</button>
+            </form>
             <div className="user-container">
               <img className="user-pic" src= {user.avatar_url} />
               <div className="user-info">
