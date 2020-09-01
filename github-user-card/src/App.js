@@ -11,6 +11,7 @@ class App extends React.Component{
     this.state = {
        followers : [],
        user : {},
+       userInput: '',
        userUrl: 'thomasjk0831'
     }
     
@@ -43,13 +44,71 @@ class App extends React.Component{
       
   }
 
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.userUrl !== this.state.userUrl){
+      axios.get(`https://api.github.com/users/${this.state.userUrl}`)
+      .then((response)=>{
+        this.setState({ ...this.state,
+          user : response.data
+        })
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+
+      
+        axios.get(`https://api.github.com/users/${this.state.userUrl}/followers`)
+        .then((response)=>{
+           console.log(response.data)
+            this.setState({
+              ...this.state,
+              followers : response.data
+            })
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+
+  }
+
+  
+  updateInput= (input)=>{
+    this.setState({
+      ...this.state, 
+      userInput : input
+    })
+  }
+
+  updateUrl = () => {
+
+    
+     this.setState({
+       ...this.state,
+       userUrl : this.state.userInput,
+       userInput: '',
+       
+     })
+     
+  }
+    
+     
+     
+     
+
+  
+
   render(){
     return(
       <>
         <Card 
           followers={this.state.followers}
            user={this.state.user} 
-           userUrl={this.state.userUrl}/>
+           userInput = {this.state.userInput}
+           userUrl={this.state.userUrl}
+           updateInput={this.updateInput}
+           updateUrl = {this.updateUrl}
+           />
       </>
     )
   }

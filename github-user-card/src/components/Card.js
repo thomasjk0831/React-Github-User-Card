@@ -2,15 +2,27 @@ import React from 'react'
 
 function Card(props){
 
-    const {followers,user,userUrl} = props
+    const {followers,user,userInput, userUrl,updateInput, updateUrl} = props
+
+    function inputHandler(e){
+        updateInput(e.target.value)
+    }
+
+    function submitHandler(e){
+        e.preventDefault()
+        updateUrl()
+    }
 
     return(
         <div className="main-container">
             <h1>Github Profile</h1>
-            <form>
+            <form onSubmit={submitHandler}>
                 <label>
                     <input
                       type="text"
+                      name="userUrl"
+                      value={userInput}
+                      onChange={inputHandler}
                       placeholder="Enter Github user"></input>
                 </label>
                 <button>submit</button>
